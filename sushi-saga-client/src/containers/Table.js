@@ -2,6 +2,9 @@ import React, { Fragment } from 'react'
 
 const Table = ({eaten, budget}) => {
 
+
+  // console.log("Table rendered")
+
   const renderPlates = (array) => {
     // console.log("array", array)
     return array.map((x, index) => {

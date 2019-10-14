@@ -1,32 +1,58 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import MoreButton from '../components/MoreButton'
 import Sushi from '../components/Sushi'
 
-const SushiContainer = ({sushis, eaten, budget, eatSushi, moreSushi}) => {
+class SushiContainer extends Component {
+
+  state = {
+    deadSush: []
+  }
+
+  trackSush = (sushi) => {
+    this.setState({
+      deadSush: [...this.state.deadSush, sushi]
+    })
+  }
 
   // console.log("I rendered")
 
-  const renderSushis = () => {
+  // componentDidMount() {
+  //   console.log("I, Sushi Container mounted!")
+  // }
+  
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log("container updated")
+  // }
+  
+
+  renderSushis = () => {
+    let {sushis, eaten, budget, eatSushi} = this.props
     return sushis.map(
       sushi => <Sushi 
                 eaten={eaten} 
                 sushi={sushi} 
                 key={`sushi-${sushi.id}`}
                 eatSushi={eatSushi}
-                budget={budget}/>
+                budget={budget}
+                trackSush={this.trackSush}/>
     )
   }
 
-  return (
-    <Fragment>
-      <div className="belt">
-        {
-          renderSushis()
-        }
-        <MoreButton moreSushi={moreSushi}/>
-      </div>
-    </Fragment>
-  )
+  render() {
+    let {moreSushi} = this.props
+    // console.log("I, SUSHI CONTAINER, RENDERED!")
+    // console.log(this.state)
+      return (
+        <Fragment>
+          <div className="belt">
+            {
+              this.renderSushis()
+            }
+            <MoreButton moreSushi={moreSushi}/>
+          </div>
+        </Fragment>
+      )
+  }
 }
 
 export default SushiContainer

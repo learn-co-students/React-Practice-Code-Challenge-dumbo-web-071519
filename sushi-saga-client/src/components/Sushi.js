@@ -2,9 +2,18 @@ import React, {Component, Fragment } from 'react'
 
 class Sushi extends Component {
 
+  // componentDidMount() {
+  //   console.log("I, sushi mounted!")
+  // }
+
+  // componentWillUnmount() {
+  //   console.log("I, sushi died!")
+  //   this.props.trackSush(this.props.sushi)
+  // }
+
   render(){
     let {sushi, eaten, eatSushi, budget} = this.props
-    
+    // console.log(`I, ${sushi.name}, RENDERED!`)
     return (
       <Fragment>
       <div className="sushi">
