@@ -1,11 +1,10 @@
 ### Deliverables:
 1. Getting all sushi and displaying them
-    - fetch data from JSON in App.js in ComponentDidMount()
+    - fetch data from JSON in App.js in componentDidMount()
     - saving the data to state
     - sending the data down as props 
     - mapping the prop into Sushi component 
     - in sushi.js rendering the data
-
 
 2. Limiting the display to only 4 sushi at a time 
     - App.js: when creating sushi components make sure we handle only 4 at a time

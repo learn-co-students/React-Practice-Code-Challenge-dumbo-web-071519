@@ -62,7 +62,7 @@ class App extends Component {
     // console.log("fourSushi", this.fourSushi())
     // console.log("newNumber", this.moreSushi())
     // console.log("currentIndex", this.state.currentIndex)
-    console.log("dollarz", this.state.budget)
+    // console.log("dollarz", this.state.budget)
 
     return (
       <div className="app">

@@ -4,7 +4,7 @@ import Sushi from '../components/Sushi'
 
 const SushiContainer = ({sushis, eaten, budget, eatSushi, moreSushi}) => {
 
-  // console.log(props)
+  // console.log("I rendered")
 
   const renderSushis = () => {
     return sushis.map(
